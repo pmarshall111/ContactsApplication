@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<BorderPane fx:id="mainBorderPane" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.121" fx:controller="sample.Controller">
+    <top>
+        <MenuBar>
+            <menus>
+                <Menu text="File">
+                    <items>
+                        <MenuItem text="Close" onAction="#handleExitClick" />
+                    </items>
+                </Menu>
+                <Menu text="Contacts">
+                    <items>
+                        <MenuItem text="New..." onAction="#showNewContactDialog"/>
+                        <SeparatorMenuItem/>
+                        <MenuItem text="Edit" onAction="#showEditContactDialog"/>
+                        <MenuItem text="Delete" onAction="#handleDeleteClick"/>
+                    </items>
+                </Menu>
+            </menus>
+
+        </MenuBar>
+    </top>
+    <center>
+        <TableView fx:id="tableView" onKeyPressed="#handleKeyPress"/>
+    </center>
+</BorderPane>
